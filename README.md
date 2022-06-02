@@ -2,6 +2,7 @@
 
 ## Introduction
 In order to further explore the effectiveness of our method, L2BN, we conduct it on the acoustice scene classification task. We experiment on the TUT Urban Acoustic Scenes 2020 Mobile Development dataset, which consists of 10-seconds audio segments from 10 acoustic scenes and contains in total of 64 hours of audio.  The task we choose is a subtask of the acoustic scene classification in the challenge on detection and classification of acoustic scenes and events (DCASE). The goal is to classify the audio recorded with multiple (real and simulated) devices into ten different fine-grained classes, including airport, public square and urban park, etc.
+
 We reference [code](https://github.com/MihawkHu/DCASE2020_task1), a work on IEEE ICASSP 2021. It tests three CNN models on this task, and we use it to compare model performances with and without L2BN.
 
 ## Experiment results
