@@ -23,16 +23,7 @@ class L2BN2d(BatchNormalization):
 def resnet_layer(inputs,l2bn=False,num_filters=16,kernel_size=3,strides=1,learn_bn = True,wd=1e-4,use_relu=True):
 
     x = inputs
-    '''
-    center: If True, add offset of `beta` to normalized tensor. If False, `beta`
-            is ignored.
-    scale: If True, multiply by `gamma`. If False, `gamma` is not used. When the
-           next layer is linear (also e.g. `nn.relu`), this can be disabled since the
-           scaling will be done by the next layer.
-    在减均值除标准差后，会再乘以gamma系数进行缩放，并加减beta系数进行平移
-    如果center和scale都设为True，则让神经网络自动学习gamma和beta，去判断前面的normalization操作是否对网络性能有帮助
-    如果没有帮助，则使用gamma和beta部分抵消normalization的影响
-    '''
+    # whether to use L2BN
     if not l2bn:
         x = BatchNormalization(center=learn_bn, scale=learn_bn)(x)
     else:
