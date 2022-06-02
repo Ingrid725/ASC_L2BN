@@ -5,6 +5,19 @@ In order to further explore the effectiveness of our method, L2BN, we conduct it
 
 We reference [code](https://github.com/MihawkHu/DCASE2020_task1), a work on IEEE ICASSP 2021. It tests three CNN models on this task, and we use it to compare model performances with and without L2BN.
 
+## How to use this code
+Firstly, download the [DCASE 2020 task 1a development data set](http://dcase.community/challenge2020/task-acoustic-scene-classification#subtask-a). And then unzip the dataset under the data folder.
+Then, run the file extr_feat_2020_nodelta_scaled.py to generate logmel features of sound files.
+```
+python extr_feat_2020_nodelta_scaled.py
+```
+Then, go to the specific model's folder, and run the model with following command.
+```
+cd resnet
+CUDA_VISIBLE_DEVICES=0,1 python train_resnet.py
+CUDA_VISIBLE_DEVICES=0,1 python train_resnet.py --l2bn
+```
+
 ## Experiment results
 Tested on [DCASE 2020 task 1a development data set](http://dcase.community/challenge2020/task-acoustic-scene-classification#subtask-a). The train-test split way follows the official recomendation.  
 

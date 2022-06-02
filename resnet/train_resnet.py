@@ -1,7 +1,7 @@
 import os
 os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-# os.environ["CUDA_VISIBLE_DEVICES"] = "6,7"
 
+import argparse
 import numpy as np
 import keras
 import tensorflow
@@ -17,6 +17,10 @@ from DCASE_training_functions import *
 
 from tensorflow import ConfigProto
 from tensorflow import InteractiveSession
+
+parser = argparse.ArgumentParser(description='Tensorflow ASC Training')
+parser.add_argument('--l2bn', default=False, action='store_true', help='L2 norm before BN')
+args = parser.parse_args()
 
 config = ConfigProto()
 config.gpu_options.allow_growth = True
@@ -36,7 +40,7 @@ feat_path = '../features/logmel128_scaled_full'
 # distinguish experimental result
 ind = 1
 # whether to use l2bn
-l2bn=False
+l2bn=args.l2bn
 # Record the experimental results
 experiments = 'resnet_%d/' %ind if not l2bn else 'resnet_l2bn_%d/' %ind
 
