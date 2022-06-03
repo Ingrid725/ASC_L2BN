@@ -19,7 +19,7 @@ CUDA_VISIBLE_DEVICES=0,1 python train_resnet.py --l2bn
 ```
 And we also supply some pretrained models, you can evaluate it with following command.
 ```
-python eval_model.py  
+python eval_model_10class.py  
 ```
 
 ## Experiment results

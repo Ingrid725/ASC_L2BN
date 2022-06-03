@@ -103,8 +103,3 @@ mean_recall = np.mean(recall_by_class)
 
 print("Class names:", ClassNames)
 print("Per-class val acc: ",recall_by_class, "\n\n")
-
-
-
-
-
