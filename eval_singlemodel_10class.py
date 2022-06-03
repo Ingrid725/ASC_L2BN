@@ -27,16 +27,12 @@ config = ConfigProto()
 config.gpu_options.allow_growth = True
 session = InteractiveSession(config=config)
 
-
-
 #Task 1a dev validation set
 val_csv = 'evaluation_setup/fold1_evaluate.csv'
 feat_path = 'features/logmel128_scaled/'
 
 # put the trained model path here
-model_path = 'pretrained_models/10class-resnet-model-0.7458.hdf5'
-# model_path = 'pretrained_models/10class-fcnn-model-0.7694.hdf5'
-# model_path = 'pretrained_models/10class-fsfcnn-model-0.7620.hdf5'
+model_path = 'fsfcnn/fsfcnn_l2bn_1/model-261-0.7244.hdf5'
 
 dev_test_df = pd.read_csv(val_csv,sep='\t', encoding='ASCII')
 wav_paths = dev_test_df['filename'].tolist()

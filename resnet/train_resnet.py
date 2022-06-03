@@ -19,6 +19,7 @@ from tensorflow import ConfigProto
 from tensorflow import InteractiveSession
 
 parser = argparse.ArgumentParser(description='Tensorflow ASC Training')
+parser.add_argument('--ind', default=1, type=int, help='L2 norm before BN')
 parser.add_argument('--l2bn', default=False, action='store_true', help='L2 norm before BN')
 args = parser.parse_args()
 
@@ -38,7 +39,7 @@ feat_path = '../features/logmel128_scaled_full'
 #aug_path = 'features/logmel128_reverb_scaled/'
 
 # distinguish experimental result
-ind = 1
+ind = args.ind
 # whether to use l2bn
 l2bn=args.l2bn
 # Record the experimental results

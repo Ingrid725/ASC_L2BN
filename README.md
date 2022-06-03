@@ -11,11 +11,15 @@ Then, run the file extr_feat_2020_nodelta_scaled.py to generate logmel features 
 ```
 python extr_feat_2020_nodelta_scaled.py
 ```
-Then, go to the specific model's folder, and run the model with following command.
+Then, go to the specific model's folder, and train the model with following command.
 ```
 cd resnet
 CUDA_VISIBLE_DEVICES=0,1 python train_resnet.py
 CUDA_VISIBLE_DEVICES=0,1 python train_resnet.py --l2bn
+```
+And we also supply some pretrained models, you can evaluate it with following command.
+```
+python eval_model.py  
 ```
 
 ## Experiment results
