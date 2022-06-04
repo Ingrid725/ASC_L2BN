@@ -20,7 +20,10 @@ from tensorflow import InteractiveSession
 
 parser = argparse.ArgumentParser(description='Tensorflow ASC Training')
 <<<<<<< HEAD
+<<<<<<< HEAD
 parser.add_argument('--ind', default=1, type=int, help='L2 norm before BN')
+=======
+>>>>>>> f2085b458465827941065feefedb2251ccc1e4c6
 =======
 >>>>>>> f2085b458465827941065feefedb2251ccc1e4c6
 parser.add_argument('--l2bn', default=False, action='store_true', help='L2 norm before BN')
